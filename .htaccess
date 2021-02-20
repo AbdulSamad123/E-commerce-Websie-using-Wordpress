@@ -8,6 +8,9 @@ RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /Ecommerce/
 RewriteRule ^index\.php$ - [L]
+RewriteRule ^udemy/?$ /Ecommerce/wp-login.php [QSA,L]
+RewriteRule ^udemy/register/?$ /Ecommerce/wp-login.php?action=register [QSA,L]
+RewriteRule ^udemy/lostpassword/?$ /Ecommerce/wp-login.php?action=lostpassword [QSA,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /Ecommerce/index.php [L]
